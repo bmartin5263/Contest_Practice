@@ -2,7 +2,22 @@ import java.util.Iterator;
 import java.util.Scanner;
 import java.util.LinkedList;
 
-public class ProblemD {
+public class RationalSequence {
+
+    /*
+    SAMPLE INPUT
+    4
+    1 1
+    2 4
+    3 11
+    4 1431655765
+
+    SAMPLE OUTPUT
+    1 1/1
+    2 1/3
+    3 5/2
+    4 2178309/1346269
+    */
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

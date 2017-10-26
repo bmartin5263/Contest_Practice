@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Main {
@@ -7,38 +7,33 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        while (n != 0) {
 
-            int turns = sc.nextInt();
-            ArrayList<Integer> turnCount = new ArrayList<>(n);
-            for (int i = 0; i < n; i++) turnCount.add(0);
-            int index = -1;
-            int check = 0;
-            boolean complete = false;
-            while (!complete) {
-                for (int i = 0; i < turns; i++) {
-                    index++;
-                    if (index >= turnCount.size()) index = 0;
-                    int item = turnCount.get(index);
-                    turnCount.set(index, ++item);
-                }
-                turnCount.remove(index--);
-                check = turnCount.get(0);
-                complete = true;
+        while (sc.hasNextLine()) {
+            HashMap<String, Integer> scores = new HashMap<>();
+            ArrayList<String> incorrect = new ArrayList<>();
+            String line = sc.nextLine().trim();
+            int score = 0;
+            while (!line.equals("-1")) {
+                String[] split = line.split(" ");
 
-                for (int j = 1; j < turnCount.size(); j++) {
-                    if (turnCount.get(j-1) != turnCount.get(j)) {
-                        complete = false;
-                        break;
-                    }
-                }
+                int pts = Integer.valueOf(split[0]);
+                String problem = split[1];
+                String result = split[2];
 
+                if (result.equals("right"))
+                    scores.put(problem, pts);
+                else
+                    incorrect.add(problem);
+
+                line = sc.nextLine();
             }
 
-            System.out.println(String.format("%s %s", turnCount.size(), check));
+            for (String key : scores.keySet()) score += scores.get(key);
+            for (String wrong : incorrect) {
+                if (scores.containsKey(wrong)) score += 20;
+            }
 
-            n = sc.nextInt();
+            System.out.println(String.format("%s %s",scores.size(), score));
 
         }
 
