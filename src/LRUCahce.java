@@ -10,7 +10,6 @@ public class LRUCahce {
         while (x != 0) {
 
             String access = sc.nextLine().trim();
-            //System.out.println(access);
             System.out.println(String.format("Simulation %s",++simulation));
             int length = access.length();
             for (int i  = 0; i < length; i++) {

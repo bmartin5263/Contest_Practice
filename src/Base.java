@@ -1,3 +1,4 @@
+import java.math.BigInteger;
 import java.util.Scanner;
 
 public class Base {
@@ -40,6 +41,7 @@ public class Base {
             }
             String formatted = String.format("%s %s %s %s",i+1,octal, value, hexi);
             System.out.println(formatted);
+
         }
     }
 

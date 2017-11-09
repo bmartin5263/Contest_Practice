@@ -1,7 +1,18 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Scanner;
+
+/*
+Sample Input
+512789
+6342222
+9012340123
+0
+Sample Output
+207
+447
+11257
+ */
 
 public class DigitSum {
 

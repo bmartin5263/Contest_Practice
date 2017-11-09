@@ -1,6 +1,17 @@
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
+
+/*
+Sample Input
+12 2
+12 9
+8 3
+0
+Sample Output
+1 11 12
+3 4 10
+4 5 6
+ */
 
 public class MissingPages {
 

@@ -1,6 +1,17 @@
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Scanner;
+
+/*
+Sample Input
+5 17
+7 10
+90 2
+0
+Sample Output
+2 13
+5 3
+45 1
+ */
 
 public class TurnGame {
 
